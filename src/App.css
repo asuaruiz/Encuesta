@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.small-container{
+  width: 70%;
+  margin: 0 auto;
+}
+.extra-pad{
+  margin: 10px;
+}
+.center-widht{
+  width: 80%;
+  margin: 0 auto;
+}
