@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 .App-logo {
   height: 40vmin;
@@ -47,4 +44,95 @@
 .center-widht{
   width: 80%;
   margin: 0 auto;
+}
+
+li{
+  list-style: none;
+}
+header{
+  background-color: cadetblue;
+}
+.logo{
+  width: 120px;
+}
+.extra-pad{
+  padding-top: 40px;
+}
+.float-left{
+  float: left;
+}
+.h-300{
+  height: 300px;
+}
+aside {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+  background-color: lightgray;
+}
+
+.bg-black{
+  background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+
+}
+.text-white{
+    color:  white;
+}
+.text-black{
+    color:  black;
+}
+.bg-primary-orange{
+  background-color: #fec503;
+}
+.primary-orange{
+  color: #fec503;
+}
+.org-btn{
+  border: 1px solid #fec503;
+  color: #fec503;
+}
+.org-btn:hover{
+  background-color: #fec503;
+  color: white;
+}
+
+.light-grey{
+  color:#6c757d;
+}
+
+.bg-light-grey{
+  background-color: #6c757d;
+}
+
+.social-buttons-circle-dark-grey{
+  background:  #1a1d20;
+}
+
+/* img css */
+
+/* .testimonals-container img{
+  width:300px;
+  
+} */
+
+/* hero */
+.center{
+  text-align: center;
+}
+
+/*  Card hover */
+.move-up:hover{
+    background-color: #fec503;
+  color: white;
+    transition: all .5s;
+    transform : translateY(-10px);
+}
+
+.ng-mrg-t{
+  margin-top: -50px;
+}
+.e-pad{
+  margin: 10px 5px;
 }

@@ -133,12 +133,14 @@ function CSVProcessor() {
   };
 
   return (
-    <div className='row center-widht'>
-      <input type="file" onChange={handleFileUpload} accept=".csv" />
+    <div className='row center-widht extra-pad'>
       <div className=''>
+      <input className='float-left' type="file" onChange={handleFileUpload} accept=".csv" />
+      </div>
+      <div>
         <h2>Selecciona la columna:</h2>
         {columnNames.map((columnName) => (
-          <button className='btn btn-info extra-pad'
+          <button className='btn btn-info e-pad'
             key={columnName}
             onClick={() => {
               setSelectedColumn(columnName);
@@ -150,6 +152,8 @@ function CSVProcessor() {
           </button>
         ))}
       </div>
+      
+      
       {chartHistory.length > 0 && (
         <div className='row'>
           <h2>Historial de Gráficos:</h2>
