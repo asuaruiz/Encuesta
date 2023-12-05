@@ -6,6 +6,7 @@ function Download() {
   const [skus, setSkus] = useState('');
   const [selectedSize, setSelectedSize] = useState('185x185'); // Tamaño predeterminado
   const [downloadLink, setDownloadLink] = useState('');
+  const [linkPrefix, setLinkPrefix] = useState('https://www.dimerc.cl/catalog/thumbnail/get');
 
   const handleSizeChange = (size) => {
     setSelectedSize(size);
@@ -14,12 +15,12 @@ function Download() {
   const handleDownloadImages = async (e) => {
     e.preventDefault(); // Prevenir el envío del formulario
 
-    const skuArray = skus.split(',').map(sku => sku.trim());
+    const skuArray = skus.split(',').map((sku) => sku.trim());
 
     const zip = new JSZip();
 
     for (const sku of skuArray) {
-      const imageUrl = `https://www.dimerc.cl/catalog/thumbnail/get/size/${selectedSize}/sku/${sku}.jpg`;
+      const imageUrl = `${linkPrefix}/size/${selectedSize}/sku/${sku}.jpg`;
 
       try {
         const response = await axios.get(imageUrl, { responseType: 'blob' });
@@ -30,7 +31,7 @@ function Download() {
       }
     }
 
-    zip.generateAsync({ type: 'blob' }).then(content => {
+    zip.generateAsync({ type: 'blob' }).then((content) => {
       const downloadUrl = window.URL.createObjectURL(content);
       setDownloadLink(downloadUrl);
     });
@@ -40,7 +41,7 @@ function Download() {
     <div className="container-fluid">
       <div className="row d-flex">
         <div className="col align-middle">
-          <div className="px-2 py-2">
+        <div className="px-2 py-2">
             <img src="https://img.freepik.com/free-vector/happy-freelancer-with-computer-home-young-man-sitting-armchair-using-laptop-chatting-online-smiling-vector-illustration-distance-work-online-learning-freelance_74855-8401.jpg?w=900&t=st=1667037491~exp=1667038091~hmac=7c71ea8afc8f3cc8065c5ccc05d105e3c8a7b76f0133016cb210a7882dc19611" className="img-fluid" alt="..." />
           </div>
         </div>
@@ -53,6 +54,18 @@ function Download() {
             <div className="px-2 py-2">
               <form onSubmit={handleDownloadImages}>
                 <div className="row g-3">
+                  <div className="col-6">
+                    <div className="form-group">
+                      <label htmlFor="linkPrefix">Ingresa el prefijo del enlace</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="linkPrefix"
+                        value={linkPrefix}
+                        onChange={(e) => setLinkPrefix(e.target.value)}
+                      />
+                    </div>
+                  </div>
                   <div className="col-12">
                     <div className="col-6">
                       <p className="mb-2">Selecciona el tamaño de la imagen:</p>
@@ -67,7 +80,15 @@ function Download() {
                   <div className="col-12">
                     <div className="col-6">
                       <label htmlFor="your-message" className="form-label">Agrega los SKU separados por coma</label>
-                      <textarea className="form-control" id="your-message" name="your-message" value={skus} onChange={(e) => setSkus(e.target.value)} rows="5" required></textarea>
+                      <textarea
+                        className="form-control"
+                        id="your-message"
+                        name="your-message"
+                        value={skus}
+                        onChange={(e) => setSkus(e.target.value)}
+                        rows="5"
+                        required
+                      ></textarea>
                     </div>
                   </div>
                   <div className="col-12">
@@ -75,18 +96,14 @@ function Download() {
                       <button type="submit" className="btn btn-dark w-100 fw-bold">Descargar</button>
                     </div>
                   </div>
-                <div className="col-12">
-                    <div className="col-6">
-                        {downloadLink && (
-                            <div className="row">
-                                <div className="col">
-                                    <p>Descarga ZIP:</p>
-                                    <a href={downloadLink} download="images.zip" className="btn btn-primary">Descargar ZIP</a>
-                                </div>
-                            </div>
-                        )}
+                  {downloadLink && (
+                    <div className="col-12">
+                      <div className="col-6">
+                        <p>Descarga ZIP:</p>
+                        <a href={downloadLink} download="images.zip" className="btn btn-primary">Descargar ZIP</a>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </form>
             </div>
@@ -98,5 +115,3 @@ function Download() {
 }
 
 export default Download;
-
-

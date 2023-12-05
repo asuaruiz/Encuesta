@@ -136,3 +136,7 @@ aside {
 .e-pad{
   margin: 10px 5px;
 }
+#root > div > div > div > div:nth-child(2) > div > div:nth-child(2) > form > div > div:nth-child(2) > div > div > button{
+  margin-right: 10px;
+  border-radius: 5px;
+}
