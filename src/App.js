@@ -5,6 +5,7 @@ import Home from './Home';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Download from './Download';
 import Header from './Header'; // Importa el componente de encabezado
+import CrearCupones from './CrearCupones';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/encuesta" element={<CSVProcessor />} />
           <Route path="/download" element={<Download />} />
+          <Route path="/crearcupones" element={<CrearCupones />} />
           {/* Definir otras rutas y componentes aquí */}
         </Routes>
       </div>
