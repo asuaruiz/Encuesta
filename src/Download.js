@@ -41,7 +41,7 @@ function Download() {
     <div className="container-fluid">
       <div className="row d-flex">
         <div className="col align-middle">
-        <div className="px-2 py-2">
+          <div className="px-2 py-2">
             <img src="https://img.freepik.com/free-vector/happy-freelancer-with-computer-home-young-man-sitting-armchair-using-laptop-chatting-online-smiling-vector-illustration-distance-work-online-learning-freelance_74855-8401.jpg?w=900&t=st=1667037491~exp=1667038091~hmac=7c71ea8afc8f3cc8065c5ccc05d105e3c8a7b76f0133016cb210a7882dc19611" className="img-fluid" alt="..." />
           </div>
         </div>
@@ -73,6 +73,7 @@ function Download() {
                         <button type="button" className={`btn ${selectedSize === '185x185' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => handleSizeChange('185x185')}>185x185</button>
                         <button type="button" className={`btn ${selectedSize === '250x250' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => handleSizeChange('250x250')}>250x250</button>
                         <button type="button" className={`btn ${selectedSize === '500x500' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => handleSizeChange('500x500')}>500x500</button>
+                        <button type="button" className={`btn ${selectedSize === '800x800' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => handleSizeChange('800x800')}>800x800</button>
                         <button type="button" className={`btn ${selectedSize === '1000x1000' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => handleSizeChange('1000x1000')}>1000x1000</button>
                       </div>
                     </div>
