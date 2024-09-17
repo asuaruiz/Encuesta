@@ -4,6 +4,7 @@ import CSVProcessor from './encuesta';
 import Home from './Home';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Download from './Download';
+import Rename from './rename'
 import Header from './Header'; // Importa el componente de encabezado
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/encuesta" element={<CSVProcessor />} />
           <Route path="/download" element={<Download />} />
+          <Route path="/rename" element={<Rename />} />
           {/* Definir otras rutas y componentes aquí */}
         </Routes>
       </div>
