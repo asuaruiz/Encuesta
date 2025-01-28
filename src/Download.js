@@ -70,6 +70,7 @@ function Download() {
                     <div className="col-6">
                       <p className="mb-2">Selecciona el tamaño de la imagen:</p>
                       <div className="btn-group" role="group">
+                        <button type="button" className={`btn ${selectedSize === '150x150' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => handleSizeChange('150x150')}>150x150</button>
                         <button type="button" className={`btn ${selectedSize === '185x185' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => handleSizeChange('185x185')}>185x185</button>
                         <button type="button" className={`btn ${selectedSize === '250x250' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => handleSizeChange('250x250')}>250x250</button>
                         <button type="button" className={`btn ${selectedSize === '500x500' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => handleSizeChange('500x500')}>500x500</button>
